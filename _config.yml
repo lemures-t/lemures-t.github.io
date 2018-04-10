@@ -80,4 +80,3 @@ deploy:
   type: git
   repo: https://github.com/lemures-t/lemures-t.github.io.git
   branch: master
-  message: update blog
