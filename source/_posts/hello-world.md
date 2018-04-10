@@ -1,38 +1,17 @@
 ---
-title: Hello World
+title: Hello World. 在 github 上搭建 hexo 博客
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+**写在前面**
 
-## Quick Start
+想搭一个博客很久了。
 
-### Create a new post
+日常工作中一些琐碎但有思考的东西还是需要记录一下，可能还会包括一些有趣的事情。
 
-``` bash
-$ hexo new "My New Post"
-```
+当然，写博客这种事情最终还是要靠坚持。
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+## 在 github 上搭建 hexo 博客
 
-### Run server
+* hexo 是一个通过 nodejs 构建的博客系统。特点在于可以将博客生成静态页面，并且有许多有才的开发者为其贡献漂亮整洁的主题。另外，作为一款有逼格的博客系统，它当然也是必须支持 CLI 和 MarkDown 的。
+* github 有个功能叫做 github pages。只要在自己的 repository 下建立 [yourname].github.io 这样的项目，并部署静态网站的内容到这个项目下，就可以通过 https://[yourname].github.io 这个域名来访问你的页面。省去了自己置备服务器和域名的成本。
+* 正是因为它俩的结合，才有了现在的这个博客。
 
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
