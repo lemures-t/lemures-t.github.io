@@ -80,7 +80,3 @@ remotes/origin/master
 大致意思即：当需要用 ``origin/master`` 的时候，如果 ``remotes/origin/HEAD``指向了 ``origin/master``，那就可以用 ``origin`` 来替代。
 
 最典型的例子是  ``git merge origin/master`` 可以写成 ``git merge origin``
-
-### 一点尾巴
-
-一些 git 的生僻命令，确实不太容易了解清楚其真正的含义，有时甚至会因为一些解释而产生误解。好在有学生时代教会我的思辨的模式和按图索骥的能力。
