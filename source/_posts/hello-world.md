@@ -41,7 +41,7 @@ hexo 官方介绍的部署方式，只是将编译后的博客发布到 github �
 
 
 
-需要指出的是 ``hexo deploy`` 主要用到了 ``hexo-deployer-git`` 这个插件。它基本的工作原理是，从 hexo 源文件的 public 目录下拷贝出编译后的博客内容，写入 ```.deploy_git``` 目录下，并通过 ```git init``` 将该目录初始化成一个 git 仓库，最后通过 ```git push -f``` 的方式，强制推送至远程仓库。
+需要指出的是 ``hexo deploy`` 主要用到了 ``hexo-deployer-git`` 这个插件。它基本的工作原理是，从 hexo 源文件的 public 目录下拷贝出编译后的博客内容，写入 ``.deploy_git`` 目录下，并通过 ``git init`` 将该目录初始化成一个 git 仓库，最后通过 ``git push -f`` 的方式，强制推送至远程仓库。
 
 ```bash
 $ git push -u <REMOTE_GITHUB_REPO_PATH> HEAD:<REMOTE_GITHUB_REPO_BRANCH> -f
@@ -55,7 +55,7 @@ $ git push -u <REMOTE_GITHUB_REPO_PATH> HEAD:<REMOTE_GITHUB_REPO_BRANCH> -f
 $ git remote set-head <name> <branch>
 ```
 
-这条命令修改的是**本地仓库**中，```remotes/<REMOTE_REPO_NAME>/HEAD``` 的指向。查看方式如下。
+这条命令修改的是**本地仓库**中，``remotes/<REMOTE_REPO_NAME>/HEAD`` 的指向。查看方式如下。
 
 ```bash
 $ git branch -a
@@ -65,22 +65,22 @@ remotes/origin/HEAD -> origin/hexo
 remotes/origin/hexo
 remotes/origin/master
 ```
-事实上，```git remote``` 修改的都是本地仓库中的 ```.git/refs/remotes``` 里的内容，不涉及到远程仓库的操作[^1]。
+事实上，``git remote`` 修改的都是本地仓库中的 ``.git/refs/remotes`` 里的内容，不涉及到远程仓库的操作[^1]。
 
 [^1]: [git remote set-head not working?](http://git.661346.n2.nabble.com/git-remote-set-head-not-working-td4187465.html)
 
-在上面的结果中 remotes/origin/HEAD 指向的是 origin/hexo 分支。类似于 origin/\<branch> 是特殊的本地分支，用来存放通过 ```git fetch``` 获取到的相应远程分支的内容[^2]
+在上面的结果中 ``remotes/origin/HEAD`` 指向的是 ``origin/hexo`` 分支。类似于 ``origin/<branch>`` 是特殊的本地分支，用来存放通过 ``git fetch`` 获取到的相应远程分支的内容[^2]
 
 [^2]: [What is origin/master in git compared to origin master?](https://stackoverflow.com/questions/19321584/what-is-origin-master-in-git-compared-to-origin-master)
 
-而 ```git remote set-head``` 这条命令的英文解释为：
+而 ``git remote set-head`` 这条命令的英文解释为：
 
 > Sets or deletes the default branch (i.e. the target of the symbolic-ref `refs/remotes/<name>/HEAD`) for the named remote. Having a default branch for a remote is not required, but allows the name of the remote to be specified in lieu of a specific branch. For example, if the default branch for `origin` is set to `master`, then `origin` may be specified wherever you would normally specify `origin/master`.
 
-大致意思即：当需要用 ```origin/master``` 的时候，如果 ```remotes/origin/HEAD``` 指向了 ```origin/master```，那就可以用 ```origin``` 来替代。
+大致意思即：当需要用 ``origin/master`` 的时候，如果 ``remotes/origin/HEAD``指向了 ``origin/master``，那就可以用 ``origin`` 来替代。
 
-最典型的例子是  ```git merge origin/master``` 可以写成 ```git merge origin```
+最典型的例子是  ``git merge origin/master`` 可以写成 ``git merge origin``
 
 ### 一点尾巴
 
-一些 git 的生僻命令，确实不太容易了解清楚其真正的含义，有时甚至会因为一些解释而产生误解。好在这种思考的方式和按图索骥的能力，是硕士三年留给我最好的东西。
+一些 git 的生僻命令，确实不太容易了解清楚其真正的含义，有时甚至会因为一些解释而产生误解。好在有学生时代教会我的思辨的模式和按图索骥的能力。
