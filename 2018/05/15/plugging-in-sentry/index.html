@@ -43,7 +43,7 @@
     
     <title>
         
-            Hello World. 在 github 上搭建 hexo 博客 | 
+            前端项目接入 sentry 监控系统 | 
         
         lemures&#39; blog
     </title>
@@ -80,6 +80,11 @@
         <style id="material_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("material_css","/css/material.min.css?Z7a72R1E4SxzBKR/WGctOA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
         <style id="style_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("style_css","/css/style.min.css?MKetZV3cUTfDxvMffaOezg==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
 
+        
+            
+                <style id="prettify_css"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_css","/css/prettify.min.css?zp8STOU9v89XWFEnN+6YmQ==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+                <style id="prettify_theme"></style><script>if(typeof window.lsLoadCSSMaxNums === "undefined")window.lsLoadCSSMaxNums = 0;window.lsLoadCSSMaxNums++;lsloader.load("prettify_theme","/css/prettify/tomorrow-night-eighties.min.css?2LJQzURO+Kr8r/fl/T8oMA==",function(){if(typeof window.lsLoadCSSNums === "undefined")window.lsLoadCSSNums = 0;window.lsLoadCSSNums++;if(window.lsLoadCSSNums == window.lsLoadCSSMaxNums)document.documentElement.style.display="";}, false)</script>
+            
         
 
     
@@ -215,7 +220,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="lemures&#39; blog">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/02/01/hello-world/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/05/15/plugging-in-sentry/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="lemures&#39; blog">
@@ -230,16 +235,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/02/01/hello-world/">
+    <meta property="og:url" content="http://yoursite.com/2018/05/15/plugging-in-sentry/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hello World. 在 github 上搭建 hexo 博客 | lemures&#39; blog">
+    <meta property="og:title" content="前端项目接入 sentry 监控系统 | lemures&#39; blog">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="a simple personal blog">
     
 
     
-        <meta property="article:published_time" content="Thu Feb 01 2018 17:45:28 GMT+0800">
-        <meta property="article:modified_time" content="Tue Apr 10 2018 22:32:29 GMT+0800">
+        <meta property="article:published_time" content="Tue May 15 2018 10:51:24 GMT+0800">
+        <meta property="article:modified_time" content="Tue May 15 2018 22:07:27 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,7 +252,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/02/01/hello-world/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/05/15/plugging-in-sentry/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -259,10 +264,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/02/01/hello-world/index.html",
-    "headline": "Hello World. 在 github 上搭建 hexo 博客",
-    "datePublished": "Thu Feb 01 2018 17:45:28 GMT+0800",
-    "dateModified": "Tue Apr 10 2018 22:32:29 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/05/15/plugging-in-sentry/index.html",
+    "headline": "前端项目接入 sentry 监控系统",
+    "datePublished": "Tue May 15 2018 10:51:24 GMT+0800",
+    "dateModified": "Tue May 15 2018 22:07:27 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "lemures",
@@ -346,7 +351,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#在-github-上搭建-hexo-博客"><span class="post-toc-number">1.</span> <span class="post-toc-text">在 github 上搭建 hexo 博客</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前端监控系统"><span class="post-toc-number">1.</span> <span class="post-toc-text">前端监控系统</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#sentry-和-raven"><span class="post-toc-number">2.</span> <span class="post-toc-text">sentry 和 raven</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前端接入-raven"><span class="post-toc-number">3.</span> <span class="post-toc-text">前端接入 raven</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#raven-初始化"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">raven 初始化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#release-和-sourcemap"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">release 和 sourcemap</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#服务端转发异常消息"><span class="post-toc-number">4.</span> <span class="post-toc-text">服务端转发异常消息</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署-Sentry-至私有服务器"><span class="post-toc-number">5.</span> <span class="post-toc-text">部署 Sentry 至私有服务器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小结"><span class="post-toc-number">6.</span> <span class="post-toc-text">小结</span></a></li></ol>
     </ul>
     
 
@@ -378,7 +383,7 @@
         
     
             <p class="article-headline-p">
-                Hello World. 在 github 上搭建 hexo 博客
+                前端项目接入 sentry 监控系统
             </p>
         </div>
 
@@ -397,7 +402,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>lemures</strong>
-        <span>Feb 01, 2018</span>
+        <span>May 15, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -429,7 +434,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello World. 在 github 上搭建 hexo 博客&url=http://yoursite.com/2018/02/01/hello-world/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=前端项目接入 sentry 监控系统&url=http://yoursite.com/2018/05/15/plugging-in-sentry/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 Share to Weibo
             </li>
@@ -438,7 +443,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello World. 在 github 上搭建 hexo 博客&url=http://yoursite.com/2018/02/01/hello-world/index.html&via=lemures" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=前端项目接入 sentry 监控系统&url=http://yoursite.com/2018/05/15/plugging-in-sentry/index.html&via=lemures" target="_blank">
             <li class="mdl-menu__item">
                 Share to Twitter
             </li>
@@ -447,7 +452,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/02/01/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/05/15/plugging-in-sentry/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Facebook
             </li>
@@ -456,7 +461,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/02/01/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/05/15/plugging-in-sentry/index.html" target="_blank">
             <li class="mdl-menu__item">
                 Share to Google+
             </li>
@@ -482,14 +487,175 @@
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
         <p><strong>写在前面</strong></p>
-<p>想搭一个博客很久了。</p>
-<p>日常工作中一些琐碎但有思考的东西还是需要记录一下，可能还会包括一些有趣的事情。</p>
-<p>当然，写博客这种事情最终还是要靠坚持。</p>
-<h2 id="在-github-上搭建-hexo-博客"><a href="#在-github-上搭建-hexo-博客" class="headerlink" title="在 github 上搭建 hexo 博客"></a>在 github 上搭建 hexo 博客</h2><ul>
-<li>hexo 是一个通过 nodejs 构建的博客系统。特点在于可以将博客生成静态页面，并且有许多有才的开发者为其贡献漂亮整洁的主题。另外，作为一款有逼格的博客系统，它当然也是必须支持 CLI 和 MarkDown 的。</li>
-<li>github 有个功能叫做 github pages。只要在自己的 repository 下建立 [yourname].github.io 这样的项目，并部署静态网站的内容到这个项目下，就可以通过 <a href="https://[yourname].github.io" target="_blank" rel="noopener">https://[yourname].github.io</a> 这个域名来访问你的页面。省去了自己置备服务器和域名的成本。</li>
-<li>正是因为它俩的结合，才有了现在的这个博客。</li>
+<p>业务代码忙碌期暂时告一段落，有空给几个线上的前端项目接了一下异常监控系统。踩了一些坑，做个简单的记录。</p>
+<h2 id="前端监控系统"><a href="#前端监控系统" class="headerlink" title="前端监控系统"></a>前端监控系统</h2><p>一般的前端项目由于直接跑在浏览器端，直面用户，保证项目的稳定性十分重要。稳定性的一个重要评估点即程序要能正确捕获异常、处理异常。前端异常的产生常常是由各种因素导致的，例如服务端错误、网络异常、浏览器兼容性问题、前端程序自身错误等。与服务端项目不同，前端项目运行在各个用户的浏览器中，因此如何记录、追踪异常就显得尤为重要。</p>
+<h2 id="sentry-和-raven"><a href="#sentry-和-raven" class="headerlink" title="sentry 和 raven"></a>sentry 和 raven</h2><p>这样普适性的需求，一般都是有造好的轮子的。站在巨人的肩膀上，可以帮助我们更好更快地做很多事情。<a href="https://sentry.io/welcome/" target="_blank" rel="noopener">sentry</a> 就是这样的一个轮子。它的优势在于：</p>
+<ul>
+<li><a href="https://github.com/getsentry/sentry" target="_blank" rel="noopener">开源</a></li>
+<li>部署自由。可以部署在自己的服务器，也可以付费部署在官方的服务器。</li>
+<li>文档、社区资源相对丰富。</li>
 </ul>
+<p>sentry 支持许多语言的异常监控，对于 javascript 而言，可以通过官方的 <a href="https://github.com/getsentry/raven-js" target="_blank" rel="noopener">raven.js</a> 接入 sentry 系统。raven.js 负责在前端搜集和上报错误，sentry 负责接收和处理异常。</p>
+<h2 id="前端接入-raven"><a href="#前端接入-raven" class="headerlink" title="前端接入 raven"></a>前端接入 raven</h2><h3 id="raven-初始化"><a href="#raven-初始化" class="headerlink" title="raven 初始化"></a>raven 初始化</h3><p>文档参考：<a href="https://docs.sentry.io/clients/javascript" target="_blank" rel="noopener">https://docs.sentry.io/clients/javascript</a></p>
+<p>我们的项目基于 Vue 2.0，使用 webpack 构建。引入方式如下。</p>
+<pre><code class="javascript">import Vue from &#39;vue&#39;
+import Raven from &#39;raven-js&#39;
+import RavenVue from &#39;raven-js/plugins/vue&#39;
+
+const SENTRY_DSN_PUBLIC = &#39;&#39;
+Raven.config(SENTRY_DSN_PUBLIC, {
+    release: process.env.RELEASE,
+    ignoreUrls: [/localhost/i, /127\.0\.0\.1/i, /webpack-internal/i]
+})
+.addPlugin(RavenVue, Vue)
+.install()
+</code></pre>
+<p>解释几个地方。</p>
+<ul>
+<li>SENTRY_DSN_PUBLIC 的格式如：<code>https://[HASH_CODE]@[DOMAIN]//[PROJECT_SERIAL_NUMBER]</code>。使用时需要把 [PROJECT_SERIAL_NUMBER] 前面的 <code>//</code> 变成 <code>/</code>。不然会出现请求无法发出的问题。</li>
+<li>ignoreUrls，并不是指所接入项目的域名，而是指 err.stack 中对象的 url 属性值。所以如果需要避免本地开发时产生的错误，并不只是排除本地的域名就可以了。</li>
+</ul>
+<pre><code class="javascript">  /*
+  * https://github.com/getsentry/raven-js/blob/66b314849c79c780a2447b8a30d7c5a2090705f7/src/raven.js#L588
+  */
+
+  // null exception name so `Error` isn&#39;t prefixed to msg
+  ex.name = null;
+  var stack = TraceKit.computeStackTrace(ex);
+  // stack[0] is `throw new Error(msg)` call itself, we are interested in the frame that was just before that, stack[1]
+  var initialCall = isArray(stack.stack) &amp;&amp; stack.stack[1];
+
+  // if stack[1] is `Raven.captureException`, it means that someone passed a string to it and we redirected that call
+  // to be handled by `captureMessage`, thus `initialCall` is the 3rd one, not 2nd
+  // initialCall =&gt; captureException(string) =&gt; captureMessage(string)
+  if (initialCall &amp;&amp; initialCall.func === &#39;Raven.captureException&#39;) {
+  initialCall = stack.stack[2];
+  }
+
+  var fileurl = (initialCall &amp;&amp; initialCall.url) || &#39;&#39;;
+
+  if (
+      !!this._globalOptions.ignoreUrls.test &amp;&amp;
+      this._globalOptions.ignoreUrls.test(fileurl)
+  ) {
+  return;
+  }
+</code></pre>
+<p>文档中写的就比较晦涩，而且 ignoreUrls 的说明还不完整，需要参考 whitelistUrls。大致意思是，ignoreUrls 和 whitelistUrls 会匹配 js 文件的地址，只有 inline 的 js 文件才会匹配站点的 url。在 webpack-dev-server 的本地调试环境下，js 文件都被写入了内存中，js 文件的地址是 webpack-internal 也不足为奇。</p>
+<blockquote>
+<p>ignoreUrls</p>
+<p>The inverse of whitelistUrls and similar to ignoreErrors, but will ignore errors from whole urls matching a regex pattern or an exact string.{ ignoreUrls: [/graph.facebook.com/, ‘<a href="http://example.com/script2.js" target="_blank" rel="noopener">http://example.com/script2.js</a>‘] }</p>
+<p>whitelistUrls</p>
+<p>The inverse of <code>ignoreUrls</code>. Only report errors from whole urls matching a regex pattern or an exact string. <code>whitelistUrls</code>should match the url of your actual JavaScript files. It should match the url of your site if and only if you are inlining code inside `` tags. Not setting this value is equivalent to a catch-all and will not filter out any values.</p>
+</blockquote>
+<h3 id="release-和-sourcemap"><a href="#release-和-sourcemap" class="headerlink" title="release 和 sourcemap"></a>release 和 sourcemap</h3><p>在生产环境中的代码，一般都是经过 uglify 的。sentry 在捕获到错误之后，可以根据错误产生的 sourcemap 生成源代码，更方便查找和解决异常。最简单的方式，就是将源文件和其 sourcemap 文件一同发布，只要浏览器能正常解析 sourcemap 文件，sentry 也同样可以。但这样的做法会让外界能轻易获取你的 sourcemap 文件，这样也就能轻易获取你的源代码。对于商业的项目而言，这样的做法并不可取。sentry 也考虑到了这点，所以它支持将 sourcemap 上传到 sentry 的部署服务器并解析，从而不让 sourcemap 文件暴露在外。不过，sentry 必须要有 release 号，才能支持 sourcemap 上传。因此，还必须配置 release 号，才能跑通整个流程。</p>
+<p>文档参考：<a href="https://docs.sentry.io/clients/javascript/sourcemaps/" target="_blank" rel="noopener">https://docs.sentry.io/clients/javascript/sourcemaps/</a>, <a href="https://docs.sentry.io/learn/releases/" target="_blank" rel="noopener">https://docs.sentry.io/learn/releases/</a></p>
+<ul>
+<li>在编译时生成 sourcemap</li>
+</ul>
+<pre><code class="javascript">  /*
+  * 在编译时，配置 webpack 的插件
+  */
+  plugins: [
+      new webpack.SourceMapDevToolPlugin({
+          filename: &#39;map/[filebase].map&#39;, // 给 sourcemap 文件命名。可以在其中设置路径，这样的路径是 output.path 的相对路径。
+          exclude: [/^(.*?)vendor(.*?)\.js$/,/^(.*?)manifest(.*?)\.js$/] // 避免生成一些文件的 sourcemap
+      }),
+
+      new webpack.optimize.UglifyJsPlugin({
+          compress: {
+              warnings: false,
+          },
+          sourceMap: true // 开启 source map
+      })
+  ]
+</code></pre>
+<p>  需要说明的是，sentry 似乎不支持 hidden-source-map 的方式，因此还是需要在 js 文件后进行显示声明 <code>//# sourceMappingURL=&lt;URL_TO_SOURCEMAP&gt;</code></p>
+<ul>
+<li>通过 webpack-sentry 插件上传 sourcemap 至 sentry 服务器</li>
+</ul>
+<pre><code class="javascript">  /*
+  * 在编译时，配置 webpack 的插件
+  */
+  new SentryCliPlugin({
+      release: release, // release 的版本号
+      include: &lt;PATH_TO_INCLUDE&gt;, // 上传的目录，一般同 output.path
+      configFile: &lt;PATH_TO_SENTRYCONFIG&gt;// sentry的配置文件
+  })
+</code></pre>
+<p>  sentry 配置文件如下，参考：<a href="https://docs.sentry.io/learn/cli/configuration/" target="_blank" rel="noopener">https://docs.sentry.io/learn/cli/configuration/</a></p>
+<pre><code>  [defaults]
+  url=&lt;DOMAIN_OF_YOUR_SENTRY_SITE&gt;
+  org=&lt;ORGANIZATION_SLUG&gt;
+  project=&lt;PROJECT_NAME&gt;
+
+  [auth]
+  token=&lt;AUTH_TOKEN&gt;
+</code></pre><p>  其中，organization_slug 即团队的简称，project 即项目的简称，token 可以在个人设置的 API 选项中找到。</p>
+<ul>
+<li>Release 号的自动化<br>一般我们都会希望，随着项目一个版本的发布，程序能自动生成一个能唯一标识的 release 号。这里，我们用git 的 commit 号来进行标识。这种方式比较适合迭代较快的项目。</li>
+</ul>
+<pre><code class="javascript">  /*
+  * 生成 release 号
+  */
+  const release = [childProcess.execSync(&#39;git rev-parse HEAD&#39;).toString().trim().substr(0, 9)]
+  const RELEASE = `&quot;${release}&quot;` // 这里用双引号将 release 号包裹起来，即为一个带双引号的字符串
+
+  // 在 SentryCliPlugin 中，获取 release 号，详见往上两块的代码
+
+  // 在编译时，注入到 process.env 中
+  let env = {}
+  env.RELEASE = RELEASE
+  new webpack.DefinePlugin({
+      &#39;process.env&#39;: env
+  }),
+
+  // 在 raven 中注入版本号
+  Raven.config(SENTRY_DSN_PUBLIC, {
+      release: process.env.RELEASE, // 这里会将 RELEASE 转义，去除双引号
+      ignoreUrls: [/localhost/i, /127\.0\.0\.1/i, /webpack-internal/i]
+  })
+</code></pre>
+<ul>
+<li>在发布前，删除 sourcemap 文件。这样 sourcemap 就不会暴露了。</li>
+</ul>
+<pre><code class="javascript">  var shell = require(&#39;shelljs&#39;)
+  var webpack = require(&#39;webpack&#39;)
+  var webpackConfig = require(&#39;./webpackconfig&#39;)
+
+  webpack(webpackConfig, (err,stats) =&gt; {
+      if(err){
+        // 这里如果有要终止程序的需求，需要调用 process.exit()
+        // 详见 https://github.com/getsentry/sentry-webpack-plugin/issues/54
+      }
+      shell.rm(&#39;-rf&#39;, &lt;PATTH_TO_SOURCEMAP_DIR&gt;)
+  })
+</code></pre>
+<h2 id="服务端转发异常消息"><a href="#服务端转发异常消息" class="headerlink" title="服务端转发异常消息"></a>服务端转发异常消息</h2><p>理想的异常监控模式是，当 sentry 收到一条异常消息后，能通过某种方式通知到开发者。除了传统的邮件模式之外，sentry 还提供了对各种系统的集成 (<a href="https://docs.sentry.io/integrations" target="_blank" rel="noopener">https://docs.sentry.io/integrations</a>) 。</p>
+<p>因为团队主要采用钉钉进行通信，我们希望借助钉钉 webhook 机器人的功能进行 sentry 的消息转发。由于 sentry 原生的 webhook 并不直接支持钉钉的 webhook API，所以需要搭建一个消息转发服务桥接 sentry 和钉钉的 webhook。这里主要看一下 senty webhook 消息的结构。我们在钉钉中所展示消息基本也就是如下字段。</p>
+<pre><code class="javascript">/*
+* https://github.com/getsentry/sentry-webhooks
+*/
+
+{
+  &quot;id&quot;: &quot;27379932&quot;,
+  &quot;project&quot;: &quot;project-slug&quot;, // project 简称
+  &quot;level&quot;: &quot;error&quot;, // 异常等级
+  &quot;url&quot;: &quot;https://app.getsentry.com/getsentry/project-slug/group/27379932/&quot;, // sentry 中错误的 URL
+  &quot;message&quot;: &quot;This is an example Python exception&quot;, // 异常消息
+  &quot;event&quot;: {
+    &quot;extra&quot;: {},
+    &quot;sentry.interfaces.User&quot;: { // 用户信息，可以通过 Raven.setUserContext 进行自定义
+    },
+    &quot;sentry.interfaces.Http&quot;: {
+      &quot;fragment&quot; : &quot;&quot; // 错误发生的 URL，便于定位错误产生的页面
+    }
+  }
+}
+</code></pre>
+<p>sentry 的 webhook 可以在 <code>项目设置 &gt; 所有集成</code> 中进行开启，并配置 webhook callbackURL。另外，你也不需要担心 sentry 是否会频繁报警，可以在 <code>项目设置 &gt; 警报</code> 中设置其发出消息的频率、规则等，非常强大。更多参考：<a href="https://docs.sentry.io/learn/notifications/#alerts" target="_blank" rel="noopener">https://docs.sentry.io/learn/notifications/#alerts</a></p>
+<h2 id="部署-Sentry-至私有服务器"><a href="#部署-Sentry-至私有服务器" class="headerlink" title="部署 Sentry 至私有服务器"></a>部署 Sentry 至私有服务器</h2><p>将 sentry 部署到私有服务器上的最大好处就是免费。sentry 可以通过 docker 和 python 两种方式部署到服务器上。当然，最好给你的 sentry 服务配置一个 https 的域名，因为<strong>好像</strong>直接通过 ip 的方式并不能成功的上报异常。详细文档请查阅：<a href="https://docs.sentry.io/server/installation" target="_blank" rel="noopener">https://docs.sentry.io/server/installation</a> 。这里不再赘述。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>前端监控系统接入以来，发现了许多不易发现或不小心产生的异常，如 <code>Unhandled Promise Rejection</code>，<code>Network Error: HTTP No Response</code>，<code>Undefined is not a/an Function/Object</code>。有针对性地解决这些问题，对于整个前端业务的稳定、用户体验的提升、项目经验的积累都十分有益。</p>
 
         
     
@@ -515,6 +681,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/04/11/hello-world/" id="post_nav-older" class="next-content">
+            Older
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -600,7 +774,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/02/">February 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/05/">May 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/04/">April 2018<span class="sidebar_archives-count">1</span></a>
             </ul>
         </li>
         
@@ -827,6 +1001,12 @@ It will not impact the appearance and can give developers a lot of support :)
 
 <!-- Import prettify js  -->
 
+    
+        
+            <script>lsloader.load("prettify_js","/js/prettify.min.js?WN07fivHQSMKWy7BmHBB6w==", true)</script>
+        
+    
+
 
 
 <!-- Window Load -->
@@ -837,6 +1017,13 @@ It will not impact the appearance and can give developers a lot of support :)
         $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
     });
 
+    
+        
+            $(function() {
+                $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+                prettyPrint();
+                })
+        
     
     
 </script>
