@@ -244,7 +244,7 @@
 
     
         <meta property="article:published_time" content="Tue May 15 2018 10:51:24 GMT+0800">
-        <meta property="article:modified_time" content="Tue May 15 2018 22:07:27 GMT+0800">
+        <meta property="article:modified_time" content="Mon May 21 2018 16:28:45 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -267,7 +267,7 @@
     "mainEntityOfPage": "http://yoursite.com/2018/05/15/plugging-in-sentry/index.html",
     "headline": "前端项目接入 sentry 监控系统",
     "datePublished": "Tue May 15 2018 10:51:24 GMT+0800",
-    "dateModified": "Tue May 15 2018 22:07:27 GMT+0800",
+    "dateModified": "Mon May 21 2018 16:28:45 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "lemures",
@@ -504,8 +504,8 @@ import RavenVue from &#39;raven-js/plugins/vue&#39;
 
 const SENTRY_DSN_PUBLIC = &#39;&#39;
 Raven.config(SENTRY_DSN_PUBLIC, {
-    release: process.env.RELEASE,
-    ignoreUrls: [/localhost/i, /127\.0\.0\.1/i, /webpack-internal/i]
+    release: process.env.RELEASE
+    // ignoreUrls: []
 })
 .addPlugin(RavenVue, Vue)
 .install()
@@ -513,7 +513,7 @@ Raven.config(SENTRY_DSN_PUBLIC, {
 <p>解释几个地方。</p>
 <ul>
 <li>SENTRY_DSN_PUBLIC 的格式如：<code>https://[HASH_CODE]@[DOMAIN]//[PROJECT_SERIAL_NUMBER]</code>。使用时需要把 [PROJECT_SERIAL_NUMBER] 前面的 <code>//</code> 变成 <code>/</code>。不然会出现请求无法发出的问题。</li>
-<li>ignoreUrls，并不是指所接入项目的域名，而是指 err.stack 中对象的 url 属性值。所以如果需要避免本地开发时产生的错误，并不只是排除本地的域名就可以了。</li>
+<li>ignoreUrls 需要特别说明一下。这个字段并不是指所接入项目的域名，而是指 err.stack 中对象的 url 属性值。</li>
 </ul>
 <pre><code class="javascript">  /*
   * https://github.com/getsentry/raven-js/blob/66b314849c79c780a2447b8a30d7c5a2090705f7/src/raven.js#L588
@@ -541,13 +541,14 @@ Raven.config(SENTRY_DSN_PUBLIC, {
   return;
   }
 </code></pre>
-<p>文档中写的就比较晦涩，而且 ignoreUrls 的说明还不完整，需要参考 whitelistUrls。大致意思是，ignoreUrls 和 whitelistUrls 会匹配 js 文件的地址，只有 inline 的 js 文件才会匹配站点的 url。在 webpack-dev-server 的本地调试环境下，js 文件都被写入了内存中，js 文件的地址是 webpack-internal 也不足为奇。</p>
+<p>文档中写的就比较晦涩，而且 ignoreUrls 的说明还不完整，需要参考 whitelistUrls。大致意思是，ignoreUrls 和 whitelistUrls 会匹配 js 文件的地址，只有 inline 的 js 文件才会匹配站点的 url。所以，如果项目中引用了一些 cdn 上的 js，如果不想让从这些 js 中抛出的错误上报至 sentry，那么需在 ignoreUrls 写入 cdn 的域名。</p>
 <blockquote>
 <p>ignoreUrls</p>
 <p>The inverse of whitelistUrls and similar to ignoreErrors, but will ignore errors from whole urls matching a regex pattern or an exact string.{ ignoreUrls: [/graph.facebook.com/, ‘<a href="http://example.com/script2.js" target="_blank" rel="noopener">http://example.com/script2.js</a>‘] }</p>
 <p>whitelistUrls</p>
 <p>The inverse of <code>ignoreUrls</code>. Only report errors from whole urls matching a regex pattern or an exact string. <code>whitelistUrls</code>should match the url of your actual JavaScript files. It should match the url of your site if and only if you are inlining code inside `` tags. Not setting this value is equivalent to a catch-all and will not filter out any values.</p>
 </blockquote>
+<p>如果想屏蔽本地调试时发生的所有错误，应该在 <code>项目设置 &gt; inbound filters</code> 中打开 <code>Filter out errors coming from localhost</code> 的开关。当然，还可以在引入 raven 之前判断一下当前的域名，排除掉不想引入 raven 的域名即可。具体可以参考：<a href="https://github.com/getsentry/sentry/issues/4729#issuecomment-272335888" target="_blank" rel="noopener">https://github.com/getsentry/sentry/issues/4729#issuecomment-272335888</a></p>
 <h3 id="release-和-sourcemap"><a href="#release-和-sourcemap" class="headerlink" title="release 和 sourcemap"></a>release 和 sourcemap</h3><p>在生产环境中的代码，一般都是经过 uglify 的。sentry 在捕获到错误之后，可以根据错误产生的 sourcemap 生成源代码，更方便查找和解决异常。最简单的方式，就是将源文件和其 sourcemap 文件一同发布，只要浏览器能正常解析 sourcemap 文件，sentry 也同样可以。但这样的做法会让外界能轻易获取你的 sourcemap 文件，这样也就能轻易获取你的源代码。对于商业的项目而言，这样的做法并不可取。sentry 也考虑到了这点，所以它支持将 sourcemap 上传到 sentry 的部署服务器并解析，从而不让 sourcemap 文件暴露在外。不过，sentry 必须要有 release 号，才能支持 sourcemap 上传。因此，还必须配置 release 号，才能跑通整个流程。</p>
 <p>文档参考：<a href="https://docs.sentry.io/clients/javascript/sourcemaps/" target="_blank" rel="noopener">https://docs.sentry.io/clients/javascript/sourcemaps/</a>, <a href="https://docs.sentry.io/learn/releases/" target="_blank" rel="noopener">https://docs.sentry.io/learn/releases/</a></p>
 <ul>
@@ -920,7 +921,7 @@ It will not impact the appearance and can give developers a lot of support :)
 
         <!--Copyright-->
         <div id="copyright">
-            Copyright&nbsp;©&nbsp;2018&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>lemures' blog
+            Copyright&nbsp;©&nbsp;2017&nbsp;-<script type="text/javascript">var fd = new Date();document.write("&nbsp;" + fd.getFullYear() + "&nbsp;");</script>lemures' blog
             
         </div>
 
