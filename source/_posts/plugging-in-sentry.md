@@ -35,8 +35,8 @@ import RavenVue from 'raven-js/plugins/vue'
 
 const SENTRY_DSN_PUBLIC = ''
 Raven.config(SENTRY_DSN_PUBLIC, {
-	release: process.env.RELEASE,
-	ignoreUrls: [/localhost/i, /127\.0\.0\.1/i, /webpack-internal/i]
+	release: process.env.RELEASE
+	// ignoreUrls: []
 })
 .addPlugin(RavenVue, Vue)
 .install()
@@ -44,7 +44,7 @@ Raven.config(SENTRY_DSN_PUBLIC, {
 
 解释几个地方。
 * SENTRY_DSN_PUBLIC 的格式如：``https://[HASH_CODE]@[DOMAIN]//[PROJECT_SERIAL_NUMBER]``。使用时需要把 [PROJECT_SERIAL_NUMBER] 前面的 ``//`` 变成 ``/``。不然会出现请求无法发出的问题。
-* ignoreUrls，并不是指所接入项目的域名，而是指 err.stack 中对象的 url 属性值。所以如果需要避免本地开发时产生的错误，并不只是排除本地的域名就可以了。
+* ignoreUrls 需要特别说明一下。这个字段并不是指所接入项目的域名，而是指 err.stack 中对象的 url 属性值。
 
 ```javascript
   /*
@@ -74,7 +74,7 @@ Raven.config(SENTRY_DSN_PUBLIC, {
   }
 ```
 
-文档中写的就比较晦涩，而且 ignoreUrls 的说明还不完整，需要参考 whitelistUrls。大致意思是，ignoreUrls 和 whitelistUrls 会匹配 js 文件的地址，只有 inline 的 js 文件才会匹配站点的 url。在 webpack-dev-server 的本地调试环境下，js 文件都被写入了内存中，js 文件的地址是 webpack-internal 也不足为奇。
+文档中写的就比较晦涩，而且 ignoreUrls 的说明还不完整，需要参考 whitelistUrls。大致意思是，ignoreUrls 和 whitelistUrls 会匹配 js 文件的地址，只有 inline 的 js 文件才会匹配站点的 url。所以，如果项目中引用了一些 cdn 上的 js，如果不想让从这些 js 中抛出的错误上报至 sentry，那么需在 ignoreUrls 写入 cdn 的域名。
 
 > ignoreUrls
 >
@@ -83,6 +83,9 @@ Raven.config(SENTRY_DSN_PUBLIC, {
 > whitelistUrls
 >
 > The inverse of `ignoreUrls`. Only report errors from whole urls matching a regex pattern or an exact string. `whitelistUrls`should match the url of your actual JavaScript files. It should match the url of your site if and only if you are inlining code inside `` tags. Not setting this value is equivalent to a catch-all and will not filter out any values.
+>
+
+如果想屏蔽本地调试时发生的所有错误，应该在 ``项目设置 > inbound filters `` 中打开 ``Filter out errors coming from localhost`` 的开关。当然，还可以在引入 raven 之前判断一下当前的域名，排除掉不想引入 raven 的域名即可。具体可以参考：https://github.com/getsentry/sentry/issues/4729#issuecomment-272335888
 
 ### release 和 sourcemap
 
