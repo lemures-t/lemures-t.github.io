@@ -147,7 +147,7 @@ Raven.config(SENTRY_DSN_PUBLIC, {
   /*
   * 生成 release 号
   */
-  const release = [childProcess.execSync('git rev-parse HEAD').toString().trim().substr(0, 9)]
+  const release = childProcess.execSync('git rev-parse HEAD').toString().trim().substr(0, 9)
   const RELEASE = `"${release}"` // 这里用双引号将 release 号包裹起来，即为一个带双引号的字符串
   
   // 在 SentryCliPlugin 中，获取 release 号，详见往上两块的代码
@@ -161,8 +161,7 @@ Raven.config(SENTRY_DSN_PUBLIC, {
   
   // 在 raven 中注入版本号
   Raven.config(SENTRY_DSN_PUBLIC, {
-  	release: process.env.RELEASE, // 这里会将 RELEASE 转义，去除双引号
-  	ignoreUrls: [/localhost/i, /127\.0\.0\.1/i, /webpack-internal/i]
+  	release: process.env.RELEASE // 这里会将 RELEASE 转义，去除双引号
   })
 ```
 
